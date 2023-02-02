@@ -7,6 +7,12 @@ import os
 s3 = boto3.client("s3")
 
 class AWS_BUCKET_HANDLER:
+    def list_buckets_in_s3(self):
+        response = s3.list_buckets()
+        print("List of all buckets : ")
+        for bucket in response['Buckets']:
+            print(f"-- {bucket['Name']}")
+    
     def download_file(self, bucketName, filename):
         dirPath = "data/" + filename
         try:
@@ -28,4 +34,5 @@ class AWS_BUCKET_HANDLER:
             
 
 abh = AWS_BUCKET_HANDLER()
-abh.upload_file("nath-bucket-1000", "data/abc.txt")
+abh.list_buckets_in_s3()
+#abh.upload_file("nath-bucket-1000", "data/abc.txt")
