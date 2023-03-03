@@ -22,4 +22,37 @@ class AWS_DYNAMODB_HANDLER:
         else:
             return False
     
+    def get_item(self, rno):
+        response = self.dtable.get_item(
+        Key = {
+                'roll_no': rno
+            }
+        )
+        
+        if response['ResponseMetadata']['HTTPStatusCode'] == 200 and 'Item' in response:
+            return response['Item']
+        else:
+            return None
     
+    def get_all(self):
+        response = self.dtable.scan()
+        if response['ResponseMetadata']['HTTPStatusCode'] == 200:
+            return response['Items']
+        else:
+            return None
+        
+    def delete_item(self, rno):
+        response = self.dtable.delete_item(
+        Key = {
+                'roll_no': rno
+            }
+        )
+        
+        if response['ResponseMetadata']['HTTPStatusCode'] == 200:
+            return True
+        else:
+            return False
+    
+
+ADH = AWS_DYNAMODB_HANDLER("Student")
+print(ADH.get_all())
