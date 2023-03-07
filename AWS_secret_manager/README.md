@@ -1,0 +1,3 @@
+AWS Secret Manager allows you to store sensitive data like passwords, API keys, certificates, and other secrets securely in the cloud. When you create a secret, you define what kind of information should be stored, how long it should last, and who has access to it. Secrets manager also provides additional features such as rotation of credentials, encryption at rest, and automatic expiration of credentials.
+
+With Secrets Manager, you can replace hardcoded credentials in your code, including passwords. You can retrieve secrets programmatically with an API call to Secrets Manager.
