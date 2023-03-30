@@ -7,3 +7,5 @@
 ##### 3. Subscribe to topic using subscribe_to_topic method
 ##### 4. Publish message to topic
 ##### 5. Check if you receive email on subscribed topic.
+
+https://hands-on.cloud/boto3-sns-tutorial/
